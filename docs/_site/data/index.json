@@ -1,31 +1,31 @@
 {
-  "visibility": false,
-  "title": "This is the title of the project",
+  "visibility": true,
+  "title": "A User-friendly Pipeline for Isolation of Fast-evolving Internal Transcribed Spacer(ITS) Regions from Skim Sequencing Data",
   "team": [
     {
-      "name": "Team Member Name 1",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
+      "name": "Anojan S.",
+      "email": "e15016@eng.pdn.ac.lk",
+      "eNumber": "E/15/016"
     },
     {
-      "name": "Team Member Name 2",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
+      "name": "Kapilrajh R.",
+      "email": "e15171@eng.pdn.ac.lk",
+      "eNumber": "E/15/171"
     },
     {
-      "name": "Team Member Name 3",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
+      "name": "Thakshajini S.",
+      "email": "e15351@eng.pdn.ac.lk",
+      "eNumber": "E/15/351"
     }
   ],
   "supervisors": [
     {
-      "name": "Dr. Supervisor 1",
-      "email": "email@eng.pdn.ac.lk"
+      "name": "Dr. Asitha Bandaranayake",
+      "email": "asithab@eng.pdn.ac.lk"
     },
     {
-      "name": "Supervisor 2",
-      "email": "email@eng.pdn.ac.lk"
+      "name": "Prof. Pradeepa Bandaranayake",
+      "email": "pradeepag@eng.pdn.ac.lk"
     }
   ],
   "description": "This is a breif intruduction of the project. You need to use plain text without any specific characters here",
