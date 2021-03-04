@@ -1,26 +1,26 @@
 {
-   "title":"This is the title of the project",
+   "title":"A User-friendly Pipeline for Isolation of Fast-evolving Internal Transcribed Spacer(ITS) Regions from Skim Sequencing Data",
    "team":[
       {
-         "name":"Team Member Name 1",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx",
+         "name":"Anojan S.",
+         "email":"e15016@eng.pdn.ac.lk",
+         "eNumber":"E/15/016",
          "github_profile":"#",
          "linkedin_profile":"#",
          "researchgate_profile":"#"
       },
       {
-         "name":"Team Member Name 2",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx",
+         "name":"Kapilrajh R.",
+         "email":"e15171@eng.pdn.ac.lk",
+         "eNumber":"E/15/171",
          "github_profile":"#",
          "linkedin_profile":"#",
          "researchgate_profile":"#"
       },
       {
-         "name":"Team Member Name 3",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx",
+         "name":"Thakshajini S.",
+         "email":"e15351@eng.pdn.ac.lk",
+         "eNumber":"E/15/351",
          "github_profile":"#",
          "linkedin_profile":"#",
          "researchgate_profile":"#"
@@ -28,14 +28,14 @@
    ],
    "supervisors":[
       {
-         "name":"Dr. Supervisor 1",
-         "email":"email@eng.pdn.ac.lk",
+         "name":"Dr. Asitha Bandaranayake",
+         "email":"asithab@eng.pdn.ac.lk",
          "linkedin_profile":"",
          "researchgate_profile":""
       },
       {
-         "name":"Dr. Supervisor 2",
-         "email":"email@eng.pdn.ac.lk",
+         "name":"Prof. Pradeepa Bandaranayake",
+         "email":"pradeepag@agri.pdn.ac.lk",
          "linkedin_profile":"",
          "researchgate_profile":""
       }
