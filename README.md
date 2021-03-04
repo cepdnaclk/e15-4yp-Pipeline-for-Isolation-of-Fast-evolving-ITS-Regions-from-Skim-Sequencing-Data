@@ -1,3 +1,2 @@
-## Please refer the instructions in below URL:
+## A User-friendly Pipeline for Isolation of Fast-evolving Internal Transcribed Spacer(ITS) Regions from Skim Sequencing Data
 
-https://projects.ce.pdn.ac.lk/docs/how-to-add-a-project
