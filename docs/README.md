@@ -9,7 +9,7 @@ title: A User-friendly Pipeline for Isolation of Fast-evolving Internal Transcri
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# A User-friendly Pipeline for Isolation of Fast-evolving Internal Transcribed Spacer(ITS) Regions from Skim Sequencing Data
 
 #### Team
 
