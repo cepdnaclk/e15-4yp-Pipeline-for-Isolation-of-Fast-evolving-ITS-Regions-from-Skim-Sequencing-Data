@@ -41,7 +41,7 @@ DNA that resides within the nucleus of a cell is the primary genetic material th
 ## Related works
 According to our literature review, previous several researches related to ITS regions, prove that ITS is a standard accepted metabarcode marker for several species including plants, fungi and human fungal pathogens. These researches also emphasize that ITS subregions ITS1 and ITS2 have the highest probability of correct identification within and between above mentioned species.
 
-2.1 Justifications on ITS Regions
+### 2.1 Justifications on ITS Regions
 
 - One of the researches shows that it is possible to use the ITS2 region of rDNA to distinguish five different Cinnamomum species.
 - Another review paper indicates that the ITS1 region is very useful for reliable identification of medicinal plants and phylogenetic analysis of Gambhari.
@@ -51,7 +51,7 @@ According to our literature review, previous several researches related to ITS r
 - Another group of researchers proved a more close phylogenetic relationship between polypoid Elymus plant species and other organisms using ITS sequences.
 - One of the researches approved that utilizing ITS regions as molecular targets provided the higher potential for the characterization of human fungal pathogens.
 
-2.2 Justifications on Software Tools and Pipelines
+### 2.2 Justifications on Software Tools and Pipelines
 
 According to our literature review, there are various computational tools and pipelines used in several previous researches over the last one and a half-decade to extract and analyze ITS regions from different fungal sequencing datasets. Here, we have provided justifications based on those tools and pipelines.
      
