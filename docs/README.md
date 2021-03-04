@@ -100,7 +100,7 @@ Further, we tested our pipeline for 1GB cinnamomum verum and cinnamomum zeylanic
 We have obtained separate results from ITSx and ITSxpress for different sizes of data associated with different cinnamomum species such as cinnamomum capparu coronde and cinnamomum zeylanicum. Then, we blasted those outputs separately against NCBI/nr/nt database to find and verify whether that the obtained blasted results contain ITS regions of cinnamomum species. After that, we compared the ITS output sequence/sequences  that contain ITS regions of cinnamomum species obtained from ITSx with the ITSxpress output sequence/sequences which also contain the ITS regions of cinnamomum species by doing multiple alignment using MAFFT algorithm to check whether both are exactly same sequences or not using the created distance matrix.
 
 The results are as follows:
-     1. [Comparison 1](./Results/Output_Comparison_1.pdf)
+1. [Comparison 1](./Results/Output_Comparison_1.pdf)
 
 ## Conclusion
 
