@@ -104,6 +104,11 @@ The results are as follows:
 4. [Comparison 4](./Results/Output_Comparison_4.pdf)
 
 ## Conclusion
+We conclude that if the input for ITSx are the merged sequences of reverse and forward reads having the sequence length between 150bp-300bp and the actual ITS region is greater than 300bp, then the extracted ITS region is more likely to be a partial sequence. On the other hand, if the input sequences to the ITSxpress are contigs assembled from Spades, then, there is a high probability to have a complete ITS region. 
+
+If the blast results of the ITSx output sequences for a given data size against the NCBI nr/nt database contain the ITS regions of a relevant species and the blast results of the ITSxpress output sequences for the same data size against the NCBI nr/nt database also contain the ITS regions of the same species, then when we compare both these ITSx and ITSxpress sequences using multiple alignment, we can conclude the both the ITSx and ITSxpress output are exactly same for a given data size if the created distance matrix shows no difference. 
+
+In future, we suggest to test our pipeline for different datasets associated with different species such as wild rice and strobilathes. Overall, we believe that our work will be very helpful for the biologists to provide them a clear idea on the  isolation of ITS regions as efficiently and as accurately as possible from skim sequencing data for their phylogenetic studies.
 
 ## Publications
 1. [Semester 7 report](./)
