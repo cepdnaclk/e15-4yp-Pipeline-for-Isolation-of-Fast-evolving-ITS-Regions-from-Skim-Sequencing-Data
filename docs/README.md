@@ -30,8 +30,7 @@ title: A User-friendly Pipeline for Isolation of Fast-evolving Internal Transcri
 4. [Experiment Setup and Implementation](#experiment-setup-and-implementation)
 5. [Results and Analysis](#results-and-analysis)
 6. [Conclusion](#conclusion)
-7. [Publications](#publications)
-8. [Links](#links)
+7. [Links](#links)
 
 ---
 
@@ -54,7 +53,7 @@ According to our literature review, previous several researches related to ITS r
 ### 2.2 Justifications on Software Tools and Pipelines
 
 According to our literature review, there are various computational tools and pipelines used in several previous researches over the last one and a half-decade to extract and analyze ITS regions from different fungal sequencing datasets. Here, we have provided justifications based on those tools and pipelines.
-     
+
 - One of the researches shows that ITSx is a software tool to isolate ITS1, 5.8S and ITS2 and also full-length ITS sequences from both Sanger and NGS sequencing datasets.
 - One of the researches of Professor H. Kauserud shows that extracting ITS1 sequences from 12 486 raw pyrosequencing ITS1 dataset using ITSx detected 12 410 ITS1 fungal sequences and he found the low quality or short length reads when examining the rest of the 76 sequences.
 - Research related to ITSxpress shows that it is an improved software tool from ITSx that extends its capability from marker gene studies which use Operational Taxonomic Units (OTUs) to studies that use Exact Sequence Variants (ESVs).
@@ -70,7 +69,7 @@ According to our literature review, there are various computational tools and pi
 Considering the above literature review justifications, these researches have focused on the importance of using ITS regions as a molecular marker for accurate fungal species variation analysis and the articles related to the software tool and pipelines to extract and analyze ITS regions mostly focusing on Fungal ITS sequences. Hence, these papers could not utilize these tools and pipelines to isolate ITS regions from plant and human skim sequence data. We have not found a review paper comparing the pros and cons of all the tools and pipelines. Therefore, through our research, we are going to do a comparative analysis between these software tools and pipelines to identify the best tool or technology or pipeline. Then, we are going to find whether they are applicable for plant and human skim sequence data and how much data is enough for the analysis.
 
 ## Methodology
-First, we analyzed the software and hardware requirements of the software tools and pipelines that we identified from our literature review such as  ITSx, ITSxpress and PIPITS about how much RAM and disk space is needed to install each tool and what kind of input data is needed for each tool. Then, we identified whether we need to input skim data or contigs or scaffolds for these tools. After that, we installed these tools ITSx, ITSxpress and PIPITS with all the other required tools in our department aiken server using the anaconda environment. 
+First, we analyzed the software and hardware requirements of the software tools and pipelines that we identified from our literature review such as  ITSx, ITSxpress and PIPITS about how much RAM and disk space is needed to install each tool and what kind of input data is needed for each tool. Then, we identified whether we need to input skim data or contigs or scaffolds for these tools. After that, we installed these tools ITSx, ITSxpress and PIPITS with all the other required tools in our department aiken server using the anaconda environment.
 
 Next, we have collected the data that separately contains forward and reverse raw reads of different Cinnamomum species such as Cinnamomum Capparu Coronde, Cinnamomum Verum and Cinnamomum Zeylanicum. Then, we tested these tools using the given cinnamomum capparu coronde data containing the forward raw reads around 19 GB and reverse raw reads around 19 GB. We recorded the output and the CPU time for each tool.We earlier got empty files as output for the tools earlier and it took a very long time to obtain the output in akien server.
 
@@ -80,17 +79,17 @@ We used the tool seqtk to partition different sizes of the collected data such a
 
 In the first step of our pipeline, we have done the quality checking of the reads to find the GC content, no of low quality reads and other relevant characteristics of the reads.Then, we filtered out the low quality reads using fastqc. However, we couldn't filter out both forward and reverse reads simultaneously using that tool. Therefore, we found another tool afterqc to filter out both forward and reverse reads at the same time and tested it successfully.
 
-After quality filtering, we ran ITSx by directly using the good quality forward and reverse raw reads as input to extract ITS regions. However, we failed in the process and we found that the read length 150bp is not sufficient to extract ITS regions using ITSx. Therefore, we needed to assemble the forward and reverse reads to get contigs in order to maximize the read length. Hence, we used the assembler Spades to obtain the contigs in fasta format. In the next step, we ran ITSx using the resultant contigs in fasta format for the aforementioned different sizes of data separately. 
+After quality filtering, we ran ITSx by directly using the good quality forward and reverse raw reads as input to extract ITS regions. However, we failed in the process and we found that the read length 150bp is not sufficient to extract ITS regions using ITSx. Therefore, we needed to assemble the forward and reverse reads to get contigs in order to maximize the read length. Hence, we used the assembler Spades to obtain the contigs in fasta format. In the next step, we ran ITSx using the resultant contigs in fasta format for the aforementioned different sizes of data separately.
 
 Meanwhile, we also converted the obtained contigs from fasta format to fastq format using the tool seqtk since ITSxpress only accepts fastq format input files. Then, we used the resultant contigs in fastq format as input to ITSxpress to extract ITS regions. Here, we looked for more tools associated with fasta to fastq conversion and found the tool bbmap(reformat.sh) in addition to seqtk. Then, we compared the performance between seqtk and bbmap(reformat.sh) for 3GB and 5GB cinnamomum capparu coronde data and observed the difference in the recorded run times. Thereafter, we input the resultant fastq files obtained form both seqtk and bbmap(reformat.sh) to ITSxpress and compared the run times taken to get the output.
 
-Earlier, when we ran ITSx using contigs as input for 1GB data, we got empty output file. Then, we merged the forward and reverse reads using the tool vsearch and ran ITSx again using the obtained merged reads as input. As a result, we got some ITS sequences as output. Then, we have checked the quality of the output and blasted to ensure that we got the exact ITS regions of cinnamomum species. However, we identified multiple sequences in the output. 
+Earlier, when we ran ITSx using contigs as input for 1GB data, we got empty output file. Then, we merged the forward and reverse reads using the tool vsearch and ran ITSx again using the obtained merged reads as input. As a result, we got some ITS sequences as output. Then, we have checked the quality of the output and blasted to ensure that we got the exact ITS regions of cinnamomum species. However, we identified multiple sequences in the output.
 
-Further, we found that some of the sequences in contigs which are greater than 100kbp in read length is the reason behind getting these multiple sequences in the output. Therefore, we filtered out those sequences that are greater than 100kbp from the contigs file using the tool bbmap(reformat.sh). After that, we ran ITSx using the filtered contigs to extract ITS regions and we ended up getting some ITS sequences as output for cinnamomum capparu coronde 1GB data. When we checked the quality of the output this time, we found that there were no multiple sequences. 
+Further, we found that some of the sequences in contigs which are greater than 100kbp in read length is the reason behind getting these multiple sequences in the output. Therefore, we filtered out those sequences that are greater than 100kbp from the contigs file using the tool bbmap(reformat.sh). After that, we ran ITSx using the filtered contigs to extract ITS regions and we ended up getting some ITS sequences as output for cinnamomum capparu coronde 1GB data. When we checked the quality of the output this time, we found that there were no multiple sequences.
 
-Earlier, we ran ITS using the default mumber of threads which is only one CPU thread and later we increased the number of CPU threads from one to sixteen to run the ITSx. As a result, we found much improvement in the performance of ITSx. After that, we tried with different thread sizes for 1GB cinnamomum capparu coronde data and observed the deviation in the performance of ITSX with respect the increasing or decreasing thread sizes. 
+Earlier, we ran ITS using the default mumber of threads which is only one CPU thread and later we increased the number of CPU threads from one to sixteen to run the ITSx. As a result, we found much improvement in the performance of ITSx. After that, we tried with different thread sizes for 1GB cinnamomum capparu coronde data and observed the deviation in the performance of ITSX with respect the increasing or decreasing thread sizes.
 
-Meanwhile, we faced no problem when directly using contigs obtained from spades as input to run ITSxpress and we got an ITS sequence as the output from ITSxpress for the same data. Then, we checked the quality of the ITSxpress output and blasted it to verify that the obtained ITS sequence belongs to cinnamomum species. Next, we compared the ITSxpress output with the ITSx output by doing multiple alignment to find whether both of them are same. 
+Meanwhile, we faced no problem when directly using contigs obtained from spades as input to run ITSxpress and we got an ITS sequence as the output from ITSxpress for the same data. Then, we checked the quality of the ITSxpress output and blasted it to verify that the obtained ITS sequence belongs to cinnamomum species. Next, we compared the ITSxpress output with the ITSx output by doing multiple alignment to find whether both of them are same.
 
 Further, we tested our pipeline for 1GB cinnamomum verum and cinnamomum zeylanicum data as well using the same process and compared all the results of both ITSx and ITSxpress for the three cinnamomum species based on the performance and quality of the output obtained by blasting the output sequences and doing multiple alignment to obtain the distance matrix.
 
@@ -104,19 +103,11 @@ The results are as follows:
 4. [Comparison 4](./Results/Output_Comparison_4.pdf)
 
 ## Conclusion
-We conclude that if the input for ITSx are the merged sequences of reverse and forward reads having the sequence length between 150bp-300bp and the actual ITS region is greater than 300bp, then the extracted ITS region is more likely to be a partial sequence. On the other hand, if the input sequences to the ITSxpress are contigs assembled from Spades, then, there is a high probability to have a complete ITS region. 
+We conclude that if the input for ITSx are the merged sequences of reverse and forward reads having the sequence length between 150bp-300bp and the actual ITS region is greater than 300bp, then the extracted ITS region is more likely to be a partial sequence. On the other hand, if the input sequences to the ITSxpress are contigs assembled from Spades, then, there is a high probability to have a complete ITS region.
 
-If the blast results of the ITSx output sequences for a given data size against the NCBI nr/nt database contain the ITS regions of a relevant species and the blast results of the ITSxpress output sequences for the same data size against the NCBI nr/nt database also contain the ITS regions of the same species, then when we compare both these ITSx and ITSxpress sequences using multiple alignment, we can conclude the both the ITSx and ITSxpress output are exactly same for a given data size if the created distance matrix shows no difference. 
+If the blast results of the ITSx output sequences for a given data size against the NCBI nr/nt database contain the ITS regions of a relevant species and the blast results of the ITSxpress output sequences for the same data size against the NCBI nr/nt database also contain the ITS regions of the same species, then when we compare both these ITSx and ITSxpress sequences using multiple alignment, we can conclude the both the ITSx and ITSxpress output are exactly same for a given data size if the created distance matrix shows no difference.
 
 In future, we suggest to test our pipeline for different datasets associated with different species such as wild rice and strobilathes. Overall, we believe that our work will be very helpful for the biologists to provide them a clear idea on the  isolation of ITS regions as efficiently and as accurately as possible from skim sequencing data for their phylogenetic studies.
-
-## Publications
-1. [Semester 7 report](./)
-2. [Semester 7 slides](./)
-3. [Semester 8 report](./)
-4. [Semester 8 slides](./)
-5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./).
-
 
 ## Links
 
